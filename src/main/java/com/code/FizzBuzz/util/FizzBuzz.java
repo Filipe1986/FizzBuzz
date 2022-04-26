@@ -7,6 +7,6 @@ public interface FizzBuzz {
 	
 	public boolean isEmpty(Integer entry);
 	
-	public String fizzbuzzResponse(Integer entry);
+	public String fizzbuzzProcess(Integer entry);
 
 }

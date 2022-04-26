@@ -24,7 +24,7 @@ public class ExceptionControllerHandler {
 
     private HashMap<Object, Object> mountError(Exception e) {
         var error = new HashMap<>();
-        error.put(DESCRIPTION, e.getCause());
+        error.put(DESCRIPTION, e.getMessage());
         return error;
     }
 }

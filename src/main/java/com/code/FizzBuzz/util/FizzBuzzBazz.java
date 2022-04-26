@@ -18,7 +18,7 @@ public class FizzBuzzBazz implements FizzBuzz {
 	}
 
 	@Override
-	public String fizzbuzzResponse(Integer entry) {
+	public String fizzbuzzProcess(Integer entry) {
 
 		if(entry % 3 == 0 && entry % 5 == 0 && entry % 7 == 0) {
 			return Constants.ReturnMessage.FIZZBUZZBAZZ;
