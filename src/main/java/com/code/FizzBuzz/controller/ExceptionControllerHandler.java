@@ -1,0 +1,30 @@
+package com.code.FizzBuzz.controller;
+
+import java.net.BindException;
+import java.util.HashMap;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.http.HttpStatus;
+
+@RestControllerAdvice
+public class ExceptionControllerHandler {
+	private static final String DESCRIPTION = "description";
+	
+    @ExceptionHandler({BindException.class, HttpMessageNotReadableException.class, IllegalArgumentException.class, MethodArgumentTypeMismatchException.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    private Object handleIllegalArgumentException(Exception ex, HttpServletRequest request) {
+    	return mountError(ex);
+    }
+
+    private HashMap<Object, Object> mountError(Exception e) {
+        var error = new HashMap<>();
+        error.put(DESCRIPTION, e.getCause());
+        return error;
+    }
+}
