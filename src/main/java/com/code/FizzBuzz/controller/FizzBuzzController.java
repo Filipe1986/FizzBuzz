@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.code.FizzBuzz.service.FizzBuzzService;
 
+
 @RestController
 @RequestMapping("/fizzbuzz")
 public class FizzBuzzController {
@@ -19,7 +20,6 @@ public class FizzBuzzController {
 	private FizzBuzzService fizzBuzzService;
 	
 	@GetMapping()
-	
 	public ResponseEntity fizzbuzz(@RequestParam(required = false) List<Integer> entry) {
 
 		return ResponseEntity.ok(fizzBuzzService.process(entry));

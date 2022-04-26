@@ -10,14 +10,6 @@ import com.code.FizzBuzz.constants.Constants;
 public class SimpleFizzBuzz implements FizzBuzz {
 	
 	@Override
-	public boolean isEmpty(Integer entry) {
-		if(entry == null) {
-			return false;
-		}
-		return true;
-	}
-
-	@Override
 	public String fizzbuzzProcess(Integer entry) {
 
 		if(entry % 5 == 0 && entry % 3 == 0) {

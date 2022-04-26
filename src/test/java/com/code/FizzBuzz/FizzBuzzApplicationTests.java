@@ -3,7 +3,6 @@ package com.code.FizzBuzz;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -66,6 +65,9 @@ class FizzBuzzApplicationTests {
 		
 		assertEquals(Constants.ReturnMessage.BAZZ, fizzBuzzBazz.fizzbuzzProcess(7));
 		assertEquals(Constants.ReturnMessage.BAZZ, fizzBuzzBazz.fizzbuzzProcess(14));
+		
+		assertEquals(Constants.ReturnMessage.FIZZBUZZ, fizzBuzzBazz.fizzbuzzProcess(15));
+		assertEquals(Constants.ReturnMessage.FIZZBUZZ, fizzBuzzBazz.fizzbuzzProcess(30));
 		
 		assertEquals(Constants.ReturnMessage.FIZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(21));
 		assertEquals(Constants.ReturnMessage.FIZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(42));
