@@ -10,15 +10,23 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.http.HttpStatus;
 
 @RestControllerAdvice
 public class ExceptionControllerHandler {
 	private static final String DESCRIPTION = "description";
 	
-    @ExceptionHandler({BindException.class, HttpMessageNotReadableException.class, IllegalArgumentException.class, MethodArgumentTypeMismatchException.class})
+    @ExceptionHandler({BindException.class, HttpMessageNotReadableException.class,
+    	IllegalArgumentException.class, MethodArgumentTypeMismatchException.class,
+    	})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     private Object handleIllegalArgumentException(Exception ex, HttpServletRequest request) {
+    	return mountError(ex);
+    }
+    
+    @ExceptionHandler(value = NoHandlerFoundException.class)
+    private Object NotFound(Exception ex, HttpServletRequest request) {
     	return mountError(ex);
     }
 
