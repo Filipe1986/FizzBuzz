@@ -34,7 +34,9 @@ Optionnal things to do:
         if multiple of 3, 5 and 7 output "FizzBuzzBazz"
 
 
-### Running local with everything on a container :
+### Running local on container:
+
+mvn clean package
 
 cd deps
 Docker-compose build
