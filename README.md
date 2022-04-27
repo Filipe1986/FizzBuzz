@@ -32,3 +32,10 @@ Optionnal things to do:
         if multiple of 5 and 7 output "BuzzBazz"
 
         if multiple of 3, 5 and 7 output "FizzBuzzBazz"
+
+
+### Running local with everything on a container :
+
+cd deps
+Docker-compose build
+Docker-compose up

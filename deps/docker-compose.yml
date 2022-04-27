@@ -1,0 +1,8 @@
+version: '3.2'
+
+services:
+  fizzbuzz-api:
+    build: ../
+    container_name: fizzbuzz-api
+    ports:
+      - "8080:8080"
