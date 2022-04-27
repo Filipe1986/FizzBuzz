@@ -8,14 +8,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.code.FizzBuzz.dto.FizzBuzzResponseDTO;
+import com.code.FizzBuzz.util.FizzBuzz;
 import com.code.FizzBuzz.util.FizzBuzzBazz;
 
 @Component
 public class FizzBuzzService {
 	
+	// Depends on abstraction
 	@Autowired
-	private FizzBuzzBazz fizzBuzzBazz;
+	private FizzBuzz fizzBuzzBazz;
 
+	/**
+	 * method that build FizzBuzz client response
+	 * @param List<Integer> entries
+	 * @return FizzBuzzResponseDTO
+	 */
 	public FizzBuzzResponseDTO process(List<Integer> entries) {
         if (entries == null || entries.isEmpty()) {
             entries = IntStream.rangeClosed(1, 100).boxed().collect(Collectors.toList());

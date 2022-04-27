@@ -9,6 +9,10 @@ import com.code.FizzBuzz.constants.Constants;
 @Component
 public class SimpleFizzBuzz implements FizzBuzz {
 	
+	/**
+	 * Method with a simple implementation of fizzbuzz
+	 * where only rules of multiples of 3 and 5 are implemented
+	 */
 	@Override
 	public String fizzbuzzProcess(Integer entry) {
 

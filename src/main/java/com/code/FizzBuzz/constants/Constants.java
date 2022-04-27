@@ -1,5 +1,11 @@
 package com.code.FizzBuzz.constants;
 
+/**
+ * 
+ * @author Filipe Gonçalves
+ *
+ * Class to keep Constants
+ */
 public class Constants {
 	
 	public static class Url {
