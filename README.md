@@ -6,9 +6,13 @@ Endpoint: /fizzbuzz?entry=[int]
 
 The output is formatted in JSON
 That endpoint will apply the fizzbuzz output with the following rules:
+
     If the entry is a multiple of 3, the output must be "fizz"
+    
     If the entry is a multiple of 5, the output must be "buzz"
+    
     If the entry is a multiple of 3 and 5, the output must be "fizzbuzz"
+    
 
 Otherwise the output must be the entry
     An error is thrown if the entry is not a Int
@@ -20,7 +24,11 @@ Optionnal things to do:
 - Write a Dockerfile and a docker-compose file to run the rest service
 - Allow to pass an array of entries and give the anwser for each element of the entry in the output
 - Implement another rule: 
-    If the entry if multiple of 7 then output "Bazz" 
-    if multiple of 3 and 7 output "FizzBazz", 
-    if multiple of 5 and 7 output "BuzzBazz", 
-    if multiple of 3, 5 and 7 output "FizzBuzzBazz"
+
+        If the entry if multiple of 7 then output "Bazz"
+
+        if multiple of 3 and 7 output "FizzBazz"
+
+        if multiple of 5 and 7 output "BuzzBazz"
+
+        if multiple of 3, 5 and 7 output "FizzBuzzBazz"
