@@ -26,6 +26,7 @@ public class ExceptionControllerHandler {
     }
     
     @ExceptionHandler(value = NoHandlerFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     private Object NotFound(Exception ex, HttpServletRequest request) {
     	return mountError(ex);
     }

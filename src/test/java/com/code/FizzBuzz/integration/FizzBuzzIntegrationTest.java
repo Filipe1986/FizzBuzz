@@ -30,6 +30,13 @@ public class FizzBuzzIntegrationTest {
     }
     
     @Test
+    void EntryNotFound404Test() throws Exception {
+    	mockMvc.perform(MockMvcRequestBuilders.get( "/inexistentUrl"))
+    	.andExpect(status().isNotFound())
+    	.andExpect(jsonPath("$.description").exists());
+    }
+    
+    @Test
     void oneEntry() throws Exception {
     	String entry = "1";
     	mockMvc.perform(MockMvcRequestBuilders.get(Url.FIZZBUZZ_PATH).param(Url.FIZZBUZZ_ENTRIES, entry))
