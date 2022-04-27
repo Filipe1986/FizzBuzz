@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import com.code.FizzBuzz.dto.FizzBuzzResponseDTO;
 import com.code.FizzBuzz.util.FizzBuzz;
-import com.code.FizzBuzz.util.FizzBuzzBazz;
 
 @Component
 public class FizzBuzzService {

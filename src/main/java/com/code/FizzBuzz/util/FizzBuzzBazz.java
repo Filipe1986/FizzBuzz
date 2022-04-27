@@ -10,7 +10,7 @@ import com.code.FizzBuzz.constants.Constants;
 public class FizzBuzzBazz implements FizzBuzz {
 	
 	/**
-	 * Method with a implementation of fizzbuzz
+	 * Method with a implementation of FizzBuzz
 	 * where rules of multiples of 3, 5 and 7 are implemented
 	 */
 	@Override
