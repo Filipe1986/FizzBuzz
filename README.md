@@ -36,8 +36,8 @@ Optionnal things to do:
 
 ### Running local on container:
 
-mvn clean package
+- mvn clean package
 
-cd deps
-Docker-compose build
-Docker-compose up
+- cd deps
+- Docker-compose build
+- Docker-compose up
