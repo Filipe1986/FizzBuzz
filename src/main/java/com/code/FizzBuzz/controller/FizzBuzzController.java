@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.code.FizzBuzz.dto.FizzBuzzResponseDTO;
 import com.code.FizzBuzz.service.FizzBuzzService;
 
 
@@ -20,7 +21,7 @@ public class FizzBuzzController {
 	private FizzBuzzService fizzBuzzService;
 	
 	@GetMapping()
-	public ResponseEntity fizzbuzz(@RequestParam(required = false) List<Integer> entry) {
+	public ResponseEntity<FizzBuzzResponseDTO> fizzbuzz(@RequestParam(required = false) List<Integer> entry) {
 
 		return ResponseEntity.ok(fizzBuzzService.process(entry));
 	}
