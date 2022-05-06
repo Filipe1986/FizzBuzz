@@ -12,10 +12,12 @@ import com.code.FizzBuzz.util.FizzBuzz;
 
 @Service
 public class FizzBuzzService {
-	
 	// Depends on abstraction
-	@Autowired
 	private FizzBuzz fizzBuzzBazz;
+
+	public FizzBuzzService(FizzBuzz fizzBuzzBazz) {
+		this.fizzBuzzBazz = fizzBuzzBazz;
+	}
 
 	/**
 	 * method that build FizzBuzz client response
