@@ -5,12 +5,12 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.code.FizzBuzz.dto.FizzBuzzResponseDTO;
 import com.code.FizzBuzz.util.FizzBuzz;
 
-@Component
+@Service
 public class FizzBuzzService {
 	
 	// Depends on abstraction

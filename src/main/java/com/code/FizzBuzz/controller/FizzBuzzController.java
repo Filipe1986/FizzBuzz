@@ -27,10 +27,9 @@ public class FizzBuzzController {
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "OK"),
 			@ApiResponse(code = 404, message = "NOT FOUND"),
-			@ApiResponse(code = 401, message = "BAD RESQUEST")
+			@ApiResponse(code = 400, message = "BAD RESQUEST")
 	})
 	public ResponseEntity<FizzBuzzResponseDTO> fizzbuzz(@RequestParam(required = false) List<Integer> entry) {
-
 		return ResponseEntity.ok(fizzBuzzService.process(entry));
 	}
 

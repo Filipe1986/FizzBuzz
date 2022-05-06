@@ -45,7 +45,7 @@ class FizzBuzzApplicationTests {
 	public void itShouldThrowNullPointerExceptionWhenParameterIsNull() {
 	    assertThrows(NullPointerException.class, ()-> simpleFizzBuzz.fizzbuzzProcess(null));
 	    
-	    assertThrows(NullPointerException.class, ()-> simpleFizzBuzz.fizzbuzzProcess(null));
+	    assertThrows(NullPointerException.class, ()-> fizzBuzzBazz.fizzbuzzProcess(null));
 	}
 	
 	@Test
@@ -54,6 +54,7 @@ class FizzBuzzApplicationTests {
 		assertEquals(Constants.ReturnMessage.FIZZBUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(0));
 		
 		int num = (int) ((Math.random() * (-100 -100)) + 100);
+		
 		assertEquals(Constants.ReturnMessage.FIZZBUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(num * 5 * 3 * 7));
 		
 		
