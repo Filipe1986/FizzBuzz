@@ -18,7 +18,7 @@ Otherwise the output must be the entry
     An error is thrown if the entry is not a Int
     If there is no entry or it's empty, the output must be an array with all the answers from 1 to 100
  
-I expect unittest and integration tests
+I expect unit test and integration tests
 
 Optionnal things to do:
 - Write a Dockerfile and a docker-compose file to run the rest service
@@ -36,8 +36,8 @@ Optionnal things to do:
 
 ### Running local on container:
 
-mvn clean package
+- mvn clean package
 
-cd deps
-Docker-compose build
-Docker-compose up
+- cd deps
+- Docker-compose build
+- Docker-compose up
