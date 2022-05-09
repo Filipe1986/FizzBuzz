@@ -35,10 +35,6 @@ public class FizzBuzzController {
 			@ApiResponse(code = 401, message = "BAD RESQUEST")
 	})
 	public ResponseEntity<FizzBuzzResponseDTO> fizzbuzz(@RequestParam(required = false) List<Integer> entry) {
-		if(entry != null) {
-			logger.info(entry.toString());
-		}
-
 		return ResponseEntity.ok(fizzBuzzService.process(entry));
 	}
 
