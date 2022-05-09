@@ -26,7 +26,6 @@ public class FizzBuzzController {
 	@GetMapping()
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "OK"),
-			@ApiResponse(code = 404, message = "NOT FOUND"),
 			@ApiResponse(code = 401, message = "BAD RESQUEST")
 	})
 	public ResponseEntity<FizzBuzzResponseDTO> fizzbuzz(@RequestParam(required = false) List<Integer> entry) {
