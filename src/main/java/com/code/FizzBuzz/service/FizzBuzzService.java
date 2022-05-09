@@ -4,9 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.code.FizzBuzz.dto.FizzBuzzResponseDTO;
 import com.code.FizzBuzz.util.FizzBuzz;
@@ -15,13 +14,13 @@ import com.code.FizzBuzz.util.FizzBuzz;
 public class FizzBuzzService {
 	// Depends on abstraction
 	private FizzBuzz fizzBuzzBazz;
-	
+
 	Logger logger = LoggerFactory.getLogger(FizzBuzzService.class);
 
 	public FizzBuzzService(FizzBuzz fizzBuzzBazz) {
 		this.fizzBuzzBazz = fizzBuzzBazz;
 	}
-
+	
 	/**
 	 * method that build FizzBuzz client response
 	 * @param List<Integer> entries
@@ -32,7 +31,7 @@ public class FizzBuzzService {
             entries = IntStream.rangeClosed(1, 100).boxed().collect(Collectors.toList());
         }
         logger.info(entries.toString());
-        FizzBuzzResponseDTO response = new FizzBuzzResponseDTO();
+	    FizzBuzzResponseDTO response = new FizzBuzzResponseDTO();
         
         entries.forEach(i -> response.addOutput(String.valueOf(i), fizzBuzzBazz.fizzbuzzProcess(i)));
         

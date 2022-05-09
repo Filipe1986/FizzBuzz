@@ -11,11 +11,15 @@ public class Constants {
 	private Constants() {}
 	
 	public static class Url {
+		private Url() {}
+		
 		public static final String FIZZBUZZ_PATH = "/fizzbuzz";
 		public static final String FIZZBUZZ_ENTRIES = "entry";
 	}
 	
 	public static class ReturnMessage {
+		private ReturnMessage() {}
+		
 		public static final String FIZZ = "fizz";
 		public static final String BUZZ = "buzz";
 		public static final String FIZZBUZZ = "fizzbuzz";
