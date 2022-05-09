@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.code.FizzBuzz.constants.Constants.Url;
 import com.code.FizzBuzz.dto.FizzBuzzResponseDTO;
 import com.code.FizzBuzz.service.FizzBuzzService;
 
@@ -18,11 +19,9 @@ import io.swagger.annotations.ApiResponses;
 
 
 @RestController
-@RequestMapping("/fizzbuzz")
+@RequestMapping(Url.FIZZBUZZ_PATH)
 public class FizzBuzzController {
-	
-	Logger logger = LoggerFactory.getLogger(FizzBuzzService.class);
-	
+		
 	private FizzBuzzService fizzBuzzService;
 	
 	public FizzBuzzController(FizzBuzzService fizzBuzzService) {

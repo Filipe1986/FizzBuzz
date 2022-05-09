@@ -8,6 +8,8 @@ package com.code.FizzBuzz.constants;
  */
 public class Constants {
 	
+	private Constants() {}
+	
 	public static class Url {
 		public static final String FIZZBUZZ_PATH = "/fizzbuzz";
 		public static final String FIZZBUZZ_ENTRIES = "entry";
