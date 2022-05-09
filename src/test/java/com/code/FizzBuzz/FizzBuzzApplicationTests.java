@@ -59,11 +59,9 @@ class FizzBuzzApplicationTests {
 	void FizzBuzzBazzTest() {
 		
 		assertEquals(Constants.ReturnMessage.FIZZBUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(0));
-		
-		int num = (int) ((Math.random() * (-100 -100)) + 100);
+
 		assertEquals(Constants.ReturnMessage.FIZZBUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(this.num * 5 * 3 * 7));
-		
-		
+				
 		assertEquals(Constants.ReturnMessage.BUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(35));
 		assertEquals(Constants.ReturnMessage.BUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(70));
 		

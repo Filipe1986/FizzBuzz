@@ -2,7 +2,8 @@ package com.code.FizzBuzz.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,15 +21,24 @@ import io.swagger.annotations.ApiResponses;
 @RequestMapping("/fizzbuzz")
 public class FizzBuzzController {
 	
-	@Autowired
+	Logger logger = LoggerFactory.getLogger(FizzBuzzService.class);
+	
 	private FizzBuzzService fizzBuzzService;
 	
+	public FizzBuzzController(FizzBuzzService fizzBuzzService) {
+		this.fizzBuzzService = fizzBuzzService;
+	}
+
+
 	@GetMapping()
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "OK"),
 			@ApiResponse(code = 401, message = "BAD RESQUEST")
 	})
 	public ResponseEntity<FizzBuzzResponseDTO> fizzbuzz(@RequestParam(required = false) List<Integer> entry) {
+		if(entry != null) {
+			logger.info(entry.toString());
+		}
 
 		return ResponseEntity.ok(fizzBuzzService.process(entry));
 	}
