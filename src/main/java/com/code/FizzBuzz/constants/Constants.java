@@ -14,13 +14,13 @@ public class Constants {
 	}
 	
 	public static class ReturnMessage {
-		public static String FIZZ = "fizz";
-		public static String BUZZ = "buzz";
-		public static String FIZZBUZZ = "fizzbuzz";
-		public static String BAZZ = "Bazz";
-		public static String FIZZBAZZ = "FizzBazz";
-		public static String BUZZBAZZ = "BuzzBazz";	
-		public static String FIZZBUZZBAZZ = "FizzBuzzBazz";	
+		public static final String FIZZ = "fizz";
+		public static final String BUZZ = "buzz";
+		public static final String FIZZBUZZ = "fizzbuzz";
+		public static final String BAZZ = "Bazz";
+		public static final String FIZZBAZZ = "FizzBazz";
+		public static final String BUZZBAZZ = "BuzzBazz";	
+		public static final String FIZZBUZZBAZZ = "FizzBuzzBazz";	
 	}
 
 }
