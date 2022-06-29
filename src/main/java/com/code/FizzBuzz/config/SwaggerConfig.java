@@ -1,4 +1,4 @@
-package com.code.FizzBuzz.config;
+package com.code.fizzbuzz.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.code.FizzBuzz;
+package com.code.fizzbuzz;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,20 +7,23 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.code.FizzBuzz.constants.Constants;
-import com.code.FizzBuzz.util.FizzBuzzBazz;
-import com.code.FizzBuzz.util.SimpleFizzBuzz;
+import com.code.fizzbuzz.constants.Constants;
+import com.code.fizzbuzz.util.FizzBuzzBazz;
+import com.code.fizzbuzz.util.SimpleFizzBuzz;
 
 @SpringBootTest
 class FizzBuzzApplicationTests {
 
-	@Autowired
 	private SimpleFizzBuzz simpleFizzBuzz;
-	
-	@Autowired
 	private FizzBuzzBazz fizzBuzzBazz;
-	
-	
+
+
+	@Autowired
+	public FizzBuzzApplicationTests(SimpleFizzBuzz simpleFizzBuzz, FizzBuzzBazz fizzBuzzBazz) {
+		this.simpleFizzBuzz = simpleFizzBuzz;
+		this.fizzBuzzBazz = fizzBuzzBazz;
+	}
+
 	@Test
 	void SimpleFizzBuzzTest() {
 		
@@ -42,7 +45,7 @@ class FizzBuzzApplicationTests {
 	}
 	
 	@Test
-	public void itShouldThrowNullPointerExceptionWhenParameterIsNull() {
+	void itShouldThrowNullPointerExceptionWhenParameterIsNull() {
 	    assertThrows(NullPointerException.class, ()-> simpleFizzBuzz.fizzbuzzProcess(null));
 	    
 	    assertThrows(NullPointerException.class, ()-> simpleFizzBuzz.fizzbuzzProcess(null));

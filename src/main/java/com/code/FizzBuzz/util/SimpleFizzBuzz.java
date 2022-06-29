@@ -1,9 +1,9 @@
-package com.code.FizzBuzz.util;
+package com.code.fizzbuzz.util;
 
 
 import org.springframework.stereotype.Component;
 
-import com.code.FizzBuzz.constants.Constants;
+import com.code.fizzbuzz.constants.Constants;
 
 
 @Component

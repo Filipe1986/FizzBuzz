@@ -1,9 +1,9 @@
-package com.code.FizzBuzz.util;
+package com.code.fizzbuzz.util;
 
 
 import org.springframework.stereotype.Component;
 
-import com.code.FizzBuzz.constants.Constants;
+import com.code.fizzbuzz.constants.Constants;
 
 
 @Component
@@ -15,6 +15,10 @@ public class FizzBuzzBazz implements FizzBuzz {
 	 */
 	@Override
 	public String fizzbuzzProcess(Integer entry) {
+
+		if(entry == null){
+			throw new NullPointerException("Illegal entry");
+		}
 
 		if(entry % 3 == 0 && entry % 5 == 0 && entry % 7 == 0) {
 			return Constants.ReturnMessage.FIZZBUZZBAZZ;

@@ -1,4 +1,4 @@
-package com.code.FizzBuzz.integration;
+package com.code.fizzbuzz.integration;
 
 import static org.hamcrest.Matchers.*;
 
@@ -12,22 +12,33 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.code.FizzBuzz.constants.Constants;
-import com.code.FizzBuzz.constants.Constants.Url;
+import com.code.fizzbuzz.constants.Constants;
+import com.code.fizzbuzz.constants.Constants.Url;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class FizzBuzzIntegrationTest {
-	
-    @Autowired
+class FizzBuzzIntegrationTest {
+
     private MockMvc mockMvc;
-    
-    @Test
+
+	@Autowired
+	public FizzBuzzIntegrationTest(MockMvc mockMvc) {
+		this.mockMvc = mockMvc;
+	}
+
+	@Test
     void wrongTypeEntry() throws Exception {
     	mockMvc.perform(MockMvcRequestBuilders.get(Url.FIZZBUZZ_PATH).param(Url.FIZZBUZZ_ENTRIES, "1a"))
     	.andExpect(status().isBadRequest())
     	.andExpect(jsonPath("$.description").exists());
     }
+
+	@Test
+	void commaTypeEntry() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get(Url.FIZZBUZZ_PATH).param(Url.FIZZBUZZ_ENTRIES, ","))
+				.andExpect(status().isBadRequest())
+				.andExpect(jsonPath("$.description").exists());
+	}
     
     @Test
     void EntryNotFound404Test() throws Exception {

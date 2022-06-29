@@ -1,4 +1,4 @@
-package com.code.FizzBuzz.ExceptionHandler;
+package com.code.fizzbuzz.ExceptionHandler;
 
 import java.net.BindException;
 import java.util.HashMap;
@@ -19,6 +19,7 @@ public class ExceptionControllerHandler {
 	
     @ExceptionHandler({BindException.class, HttpMessageNotReadableException.class,
     	IllegalArgumentException.class, MethodArgumentTypeMismatchException.class,
+            NullPointerException.class
     	})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     private Object handleIllegalArgumentException(Exception ex, HttpServletRequest request) {
@@ -27,7 +28,7 @@ public class ExceptionControllerHandler {
     
     @ExceptionHandler(value = NoHandlerFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    private Object NotFound(Exception ex, HttpServletRequest request) {
+    private Object notFound(Exception ex, HttpServletRequest request) {
     	return mountError(ex);
     }
 

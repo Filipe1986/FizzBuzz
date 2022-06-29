@@ -1,4 +1,4 @@
-package com.code.FizzBuzz.constants;
+package com.code.fizzbuzz.constants;
 
 /**
  * 
@@ -7,20 +7,25 @@ package com.code.FizzBuzz.constants;
  * Class to keep Constants
  */
 public class Constants {
-	
+	private Constants() {}
+
 	public static class Url {
-		public static final String FIZZBUZZ_PATH = "/fizzbuzz";
+		private Url() {}
+
+		public static final String FIZZBUZZ_PATH = "/" + "fizzbuzz";
 		public static final String FIZZBUZZ_ENTRIES = "entry";
 	}
 	
 	public static class ReturnMessage {
-		public static String FIZZ = "fizz";
-		public static String BUZZ = "buzz";
-		public static String FIZZBUZZ = "fizzbuzz";
-		public static String BAZZ = "Bazz";
-		public static String FIZZBAZZ = "FizzBazz";
-		public static String BUZZBAZZ = "BuzzBazz";	
-		public static String FIZZBUZZBAZZ = "FizzBuzzBazz";	
+		private ReturnMessage() {}
+
+		public static final String FIZZ = "fizz";
+		public static final String BUZZ = "buzz";
+		public static final String FIZZBUZZ = "fizzbuzz";
+		public static final String BAZZ = "Bazz";
+		public static final String FIZZBAZZ = "FizzBazz";
+		public static final String BUZZBAZZ = "BuzzBazz";
+		public static final String FIZZBUZZBAZZ = "FizzBuzzBazz";
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.code.FizzBuzz.util;
+package com.code.fizzbuzz.util;
 
 import org.springframework.stereotype.Component;
 
