@@ -12,12 +12,9 @@ import com.code.fizzbuzz.util.FizzBuzzBazz;
 import com.code.fizzbuzz.util.SimpleFizzBuzz;
 
 class FizzBuzzApplicationTests {
-	
 
 	private SimpleFizzBuzz simpleFizzBuzz;
-	
 	private FizzBuzzBazz fizzBuzzBazz;
-	
 	private int num;
 	
 	

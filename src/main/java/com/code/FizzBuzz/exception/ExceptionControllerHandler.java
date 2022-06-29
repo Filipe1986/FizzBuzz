@@ -1,4 +1,4 @@
-package com.code.fizzbuzz.ExceptionHandler;
+package com.code.fizzbuzz.exception;
 
 import java.net.BindException;
 import java.util.HashMap;
