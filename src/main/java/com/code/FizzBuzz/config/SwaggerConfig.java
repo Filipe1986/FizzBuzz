@@ -20,15 +20,14 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 				.useDefaultResponseMessages(false)
 				.select()
 				.apis(RequestHandlerSelectors.any())
-				.apis(RequestHandlerSelectors.basePackage("com.code.FizzBuzz.controller"))
+				//Remove basic-error-controller from swagger
+				.apis(RequestHandlerSelectors.basePackage("com.code.fizzbuzz.controller"))
 				.build();
 	}
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
-
-		registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+		registry.addResourceHandler("swagger-ui.html").addResourceLocations("");
 	}
 
 }

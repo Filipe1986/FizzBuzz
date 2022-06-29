@@ -18,7 +18,7 @@ import com.code.fizzbuzz.constants.Constants.Url;
 @SpringBootTest
 @AutoConfigureMockMvc
 class FizzBuzzIntegrationTest {
-
+	
     private MockMvc mockMvc;
 
 	@Autowired

@@ -3,35 +3,39 @@ package com.code.fizzbuzz;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import com.code.fizzbuzz.constants.Constants;
 import com.code.fizzbuzz.util.FizzBuzzBazz;
 import com.code.fizzbuzz.util.SimpleFizzBuzz;
 
-@SpringBootTest
 class FizzBuzzApplicationTests {
+	
 
 	private SimpleFizzBuzz simpleFizzBuzz;
+	
 	private FizzBuzzBazz fizzBuzzBazz;
-
-
-	@Autowired
-	public FizzBuzzApplicationTests(SimpleFizzBuzz simpleFizzBuzz, FizzBuzzBazz fizzBuzzBazz) {
-		this.simpleFizzBuzz = simpleFizzBuzz;
-		this.fizzBuzzBazz = fizzBuzzBazz;
+	
+	private int num;
+	
+	
+	FizzBuzzApplicationTests() {
+		simpleFizzBuzz = new SimpleFizzBuzz();
+		fizzBuzzBazz = new FizzBuzzBazz();
+		num = (int) ((Math.random() * (-100 - 100)) + 100);
 	}
-
+	
+	
 	@Test
 	void SimpleFizzBuzzTest() {
 		
 
 		assertEquals(Constants.ReturnMessage.FIZZBUZZ, simpleFizzBuzz.fizzbuzzProcess(0));
-		int num = (int) ((Math.random() * (-100 - 100)) + 100);
 		
-		assertEquals(Constants.ReturnMessage.FIZZBUZZ, simpleFizzBuzz.fizzbuzzProcess(num * 5 * 3));
+		
+		assertEquals(Constants.ReturnMessage.FIZZBUZZ, simpleFizzBuzz.fizzbuzzProcess(this.num * 5 * 3));
 		
 		assertEquals(Constants.ReturnMessage.FIZZ, simpleFizzBuzz.fizzbuzzProcess(3));
 		assertEquals(Constants.ReturnMessage.FIZZ, simpleFizzBuzz.fizzbuzzProcess(6));
@@ -48,18 +52,16 @@ class FizzBuzzApplicationTests {
 	void itShouldThrowNullPointerExceptionWhenParameterIsNull() {
 	    assertThrows(NullPointerException.class, ()-> simpleFizzBuzz.fizzbuzzProcess(null));
 	    
-	    assertThrows(NullPointerException.class, ()-> simpleFizzBuzz.fizzbuzzProcess(null));
+	    assertThrows(NullPointerException.class, ()-> fizzBuzzBazz.fizzbuzzProcess(null));
 	}
 	
 	@Test
 	void FizzBuzzBazzTest() {
 		
 		assertEquals(Constants.ReturnMessage.FIZZBUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(0));
-		
-		int num = (int) ((Math.random() * (-100 -100)) + 100);
-		assertEquals(Constants.ReturnMessage.FIZZBUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(num * 5 * 3 * 7));
-		
-		
+
+		assertEquals(Constants.ReturnMessage.FIZZBUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(this.num * 5 * 3 * 7));
+				
 		assertEquals(Constants.ReturnMessage.BUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(35));
 		assertEquals(Constants.ReturnMessage.BUZZBAZZ, fizzBuzzBazz.fizzbuzzProcess(70));
 		

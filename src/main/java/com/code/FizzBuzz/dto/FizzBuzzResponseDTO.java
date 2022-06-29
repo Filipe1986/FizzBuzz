@@ -1,7 +1,7 @@
 package com.code.fizzbuzz.dto;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class FizzBuzzResponseDTO {
 
@@ -13,7 +13,8 @@ public class FizzBuzzResponseDTO {
 	
 	public void addOutput(String entry, String output) {
 		if(this.outputs == null) {
-			this.outputs = new HashMap<>();
+			//TreeMap so the maps is always ordered
+			this.outputs = new TreeMap<>();
 		}
 		outputs.put(entry, output);
 	}
